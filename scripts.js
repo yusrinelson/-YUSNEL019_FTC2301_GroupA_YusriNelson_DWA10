@@ -1,5 +1,5 @@
-const MAX_NUMBER = 10;
-const MIN_NUMBER = 0;
+const MAX_NUMBER = 20;
+const MIN_NUMBER = -20;
 
 const keys = {
   add: document.querySelector('[data-key = "add"]'),
@@ -7,7 +7,10 @@ const keys = {
   input: document.querySelector('[data-key = "number"]'),
   reset: document.querySelector('[data-key = "reset"]'),
 };
- const body = document.querySelector('body')
+
+const reset = {
+  overlay: document.querySelector('[data-reset-overlay]')
+}
 
 const addHandler = () => {
   const newValue = parseInt(keys.input.value) + 1;
@@ -40,24 +43,9 @@ const subtractHandler = () => {
 
 const resetHandler = () => {
     keys.input.value = 0
+    reset.overlay.show();
 }
 
-
-keys.reset.addEventListener("click", function(){
-  const alertElement = document.createElement('sl-alert')
-  alertElement.open = true
-  alertElement.innerHTML = `
-  <sl-alert open duration= "2000">
-            <sl-icon
-                data-key="alerted" 
-                slot="icon" 
-                name="info-circle">
-            </sl-icon>
-            you have reset the tally count
-          </sl-alert>
-  `
-  document.body.append(alertElement)
-})
 
 keys.add.addEventListener("click", addHandler);
 keys.subtract.addEventListener("click", subtractHandler);

@@ -41,18 +41,15 @@
             data-key="reset"
             class="reset-button"
             name="arrow-repeat">
-
-         <sl-alert variant="warning" open closable>
-            <sl-icon
-                data-key="alerted" 
-                slot="icon" 
-                name="info-circle">
-            </sl-icon>
-            you have reset the tally count
-          </sl-alert>
         </sl-icon-button>
+        <sl-dialog
+            data-reset-overlay
+            label="Confirmation Message"
+            class="reset-overlay">
 
-      
+        <p>You have reset the Tally Count back to 0</p>
+
+        </sl-dialog>
     <footer>
         this is a test project for learning javascript
     </footer>
